@@ -1,0 +1,264 @@
+BL51 BANKED LINKER/LOCATER V6.05                                                        03/05/2012  19:46:55  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.05, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE main.obj TO main
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  main (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+                    0006H     000DH                  *** GAP ***
+            CODE    0013H     0003H     ABSOLUTE     
+                    0016H     07EAH                  *** GAP ***
+            CODE    0800H     0061H     UNIT         ?PR?MAIN?MAIN
+            CODE    0861H     0026H     UNIT         ?PR?_DELAY?MAIN
+            CODE    0887H     0019H     UNIT         ?C?LIB_CODE
+            CODE    08A0H     0013H     UNIT         ?PR?_SERIAL_STRING?MAIN
+            CODE    08B3H     0013H     UNIT         ?PR?EXTERNAL_INTERRUPT?MAIN
+            CODE    08C6H     0013H     UNIT         ?PR?EXTERNA2_INTERRUPT?MAIN
+            CODE    08D9H     000CH     UNIT         ?PR?SERIAL_INIT?MAIN
+            CODE    08E5H     000CH     UNIT         ?C_C51STARTUP
+            CODE    08F1H     0008H     UNIT         ?PR?_TRANSMIT?MAIN
+            CODE    08F9H     0008H     UNIT         ?PR?RECEIVE?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   main (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?PR?EXTERNAL_INTERRUPT?MAIN
+  +--> ?PR?_TRANSMIT?MAIN
+
+*** NEW ROOT ***************************************************
+
+?PR?EXTERNA2_INTERRUPT?MAIN
+  +--> ?PR?_TRANSMIT?MAIN
+
+*** NEW ROOT ***************************************************
+
+BL51 BANKED LINKER/LOCATER V6.05                                                      03/05/2012  19:46:55  PAGE 2
+
+
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?SERIAL_INIT?MAIN
+  +--> ?PR?RECEIVE?MAIN
+  +--> ?PR?_DELAY?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  main (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:08A0H         PUBLIC        _serial_string
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  C:0867H         PUBLIC        _delay
+  C:08D9H         PUBLIC        serial_init
+  B:0098H.0       PUBLIC        RI
+  C:08B3H         PUBLIC        External_interrupt
+  B:0098H.1       PUBLIC        TI
+  B:0080H.3       PUBLIC        right
+  C:0800H         PUBLIC        main
+  B:0080H.2       PUBLIC        left
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  B:0080H.1       PUBLIC        backward
+  C:08F9H         PUBLIC        Receive
+  B:00A8H.0       PUBLIC        EX0
+  D:008DH         PUBLIC        TH1
+  B:00A8H.2       PUBLIC        EX1
+  C:08F1H         PUBLIC        _Transmit
+  B:0088H.6       PUBLIC        TR1
+  B:00A0H.0       PUBLIC        ir
+  C:08C6H         PUBLIC        Externa2_interrupt
+  B:0080H.0       PUBLIC        forward
+  -------         PROC          L?0037
+  -------         ENDPROC       L?0037
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        value
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0867H         LINE#         3
+  C:0867H         LINE#         4
+  C:0867H         LINE#         6
+  C:0871H         LINE#         7
+  C:0874H         LINE#         8
+  C:087FH         LINE#         9
+BL51 BANKED LINKER/LOCATER V6.05                                                      03/05/2012  19:46:55  PAGE 3
+
+
+  C:0886H         LINE#         10
+  -------         ENDPROC       _DELAY
+  -------         PROC          SERIAL_INIT
+  C:08D9H         LINE#         11
+  C:08D9H         LINE#         12
+  C:08D9H         LINE#         13
+  C:08DCH         LINE#         14
+  C:08DFH         LINE#         15
+  C:08E2H         LINE#         16
+  C:08E4H         LINE#         17
+  -------         ENDPROC       SERIAL_INIT
+  -------         PROC          _TRANSMIT
+  D:0007H         SYMBOL        value
+  C:08F1H         LINE#         19
+  C:08F1H         LINE#         20
+  C:08F1H         LINE#         21
+  C:08F3H         LINE#         22
+  C:08F6H         LINE#         23
+  C:08F8H         LINE#         24
+  -------         ENDPROC       _TRANSMIT
+  -------         PROC          RECEIVE
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:08F9H         LINE#         26
+  C:08F9H         LINE#         27
+  C:08F9H         LINE#         29
+  C:08FCH         LINE#         30
+  C:08FEH         LINE#         31
+  C:0900H         LINE#         32
+  C:0900H         LINE#         33
+  -------         ENDPROC       RECEIVE
+  -------         PROC          _SERIAL_STRING
+  D:0001H         SYMBOL        s
+  C:08A0H         LINE#         35
+  C:08A0H         LINE#         36
+  C:08A6H         LINE#         37
+  C:08A9H         LINE#         38
+  C:08B0H         LINE#         39
+  C:08B2H         LINE#         40
+  -------         ENDPROC       _SERIAL_STRING
+  -------         PROC          EXTERNAL_INTERRUPT
+  C:08B3H         LINE#         10
+  C:08BAH         LINE#         12
+  C:08BFH         LINE#         13
+  C:08C1H         LINE#         14
+  -------         ENDPROC       EXTERNAL_INTERRUPT
+  -------         PROC          EXTERNA2_INTERRUPT
+  C:08C6H         LINE#         15
+  C:08CDH         LINE#         17
+  C:08D2H         LINE#         18
+  C:08D4H         LINE#         19
+  -------         ENDPROC       EXTERNA2_INTERRUPT
+  -------         PROC          MAIN
+  -------         DO            
+  D:0001H         SYMBOL        a
+  -------         ENDDO         
+BL51 BANKED LINKER/LOCATER V6.05                                                      03/05/2012  19:46:55  PAGE 4
+
+
+  C:0800H         LINE#         21
+  C:0800H         LINE#         22
+  C:0800H         LINE#         24
+  C:0803H         LINE#         25
+  C:0805H         LINE#         26
+  C:0807H         LINE#         27
+  C:0809H         LINE#         28
+  C:080CH         LINE#         29
+  C:080CH         LINE#         30
+  C:080CH         LINE#         31
+  C:0811H         LINE#         32
+  C:0814H         LINE#         33
+  C:0814H         LINE#         34
+  C:0817H         LINE#         35
+  C:0817H         LINE#         36
+  C:0817H         LINE#         37
+  C:0817H         LINE#         38
+  C:0817H         LINE#         39
+  C:0817H         LINE#         40
+  C:0819H         LINE#         42
+  C:0819H         LINE#         43
+  C:081BH         LINE#         44
+  C:081DH         LINE#         45
+  C:081FH         LINE#         46
+  C:0821H         LINE#         47
+  C:0821H         LINE#         48
+  C:0823H         LINE#         49
+  C:0826H         LINE#         50
+  C:0826H         LINE#         51
+  C:0828H         LINE#         52
+  C:082AH         LINE#         53
+  C:082CH         LINE#         54
+  C:082EH         LINE#         55
+  C:0830H         LINE#         56
+  C:0833H         LINE#         57
+  C:0833H         LINE#         58
+  C:0835H         LINE#         59
+  C:0837H         LINE#         60
+  C:0839H         LINE#         61
+  C:0839H         LINE#         62
+  C:083CH         LINE#         63
+  C:083EH         LINE#         64
+  C:0840H         LINE#         65
+  C:0843H         LINE#         66
+  C:0843H         LINE#         67
+  C:0845H         LINE#         68
+  C:0847H         LINE#         69
+  C:0849H         LINE#         70
+  C:0849H         LINE#         71
+  C:084CH         LINE#         72
+  C:084EH         LINE#         73
+  C:0850H         LINE#         74
+  C:0853H         LINE#         75
+  C:0853H         LINE#         76
+  C:0855H         LINE#         77
+  C:0857H         LINE#         78
+  C:0859H         LINE#         79
+BL51 BANKED LINKER/LOCATER V6.05                                                      03/05/2012  19:46:55  PAGE 5
+
+
+  C:085BH         LINE#         80
+  C:085BH         LINE#         81
+  C:085DH         LINE#         82
+  C:085FH         LINE#         83
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?CLDPTR
+  C:0887H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL_STRING?MAIN
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00E2H BYTE (11%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=266
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

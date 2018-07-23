@@ -1,0 +1,67 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+D:\vinoth\project\ITROB10\rx\main.uv2
+Project File Date:  02/16/2011
+
+<h2>Output:</h2>
+compiling main.c...
+MAIN.C(60): error C202: 'ir': undefined identifier
+MAIN.C(62): error C202: 'motor1_1': undefined identifier
+MAIN.C(63): error C202: 'motor2_1': undefined identifier
+MAIN.C(64): error C202: 'ir': undefined identifier
+MAIN.C(65): error C202: 'motor1_1': undefined identifier
+MAIN.C(66): error C202: 'motor2_1': undefined identifier
+MAIN.C(70): error C202: 'motor1_1': undefined identifier
+MAIN.C(71): error C202: 'motor2_1': undefined identifier
+MAIN.C(80): error C202: 'motor1_2': undefined identifier
+MAIN.C(81): error C202: 'motor2_2': undefined identifier
+MAIN.C(83): error C202: 'motor1_2': undefined identifier
+MAIN.C(84): error C202: 'motor2_2': undefined identifier
+MAIN.C(87): error C202: 'motor2_1': undefined identifier
+MAIN.C(89): error C202: 'motor2_1': undefined identifier
+MAIN.C(92): error C202: 'motor1_1': undefined identifier
+MAIN.C(94): error C202: 'motor1_1': undefined identifier
+MAIN.C(97): error C202: 'rotateleft': undefined identifier
+MAIN.C(99): error C202: 'rotateleft': undefined identifier
+MAIN.C(102): error C202: 'rotateright': undefined identifier
+MAIN.C(104): error C202: 'rotateright': undefined identifier
+MAIN.C(107): error C202: 'up': undefined identifier
+MAIN.C(109): error C202: 'up': undefined identifier
+MAIN.C(112): error C202: 'down': undefined identifier
+MAIN.C(114): error C202: 'down': undefined identifier
+MAIN.C(117): error C202: 'pick': undefined identifier
+MAIN.C(119): error C202: 'pick': undefined identifier
+MAIN.C(122): error C202: 'place': undefined identifier
+MAIN.C(124): error C202: 'place': undefined identifier
+main.c - 28 Error(s), 0 Warning(s).
+compiling main.c...
+MAIN.C(14): warning C206: 'serial_init': missing function-prototype
+MAIN.C(20): warning C206: 'Recieve': missing function-prototype
+MAIN.C(24): warning C206: 'delay': missing function-prototype
+MAIN.C(24): error C267: 'delay': requires ANSI-style prototype
+main.c - 1 Error(s), 3 Warning(s).
+compiling main.c...
+MAIN.C(21): warning C206: 'Recieve': missing function-prototype
+main.c - 0 Error(s), 1 Warning(s).
+compiling main.c...
+main.c - 0 Error(s), 0 Warning(s).
+compiling main.c...
+main.c - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL_STRING?MAIN
+Program Size: data=9.0 xdata=0 code=231
+creating hex file from "main"...
+"main" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SERIAL_STRING?MAIN
+Program Size: data=9.0 xdata=0 code=231
+creating hex file from "main"...
+"main" - 0 Error(s), 1 Warning(s).

@@ -1,0 +1,88 @@
+C51 COMPILER V8.06   MAIN                                                                  02/21/2011 19:32:53 PAGE 1   
+
+
+C51 COMPILER V8.06, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          #include "serial.c"
+   3          sbit forward = P0^0;
+   4          sbit backward = P0^1;
+   5          sbit left = P0^2;
+   6          sbit right = P0^3;
+   7          sbit temp = P2^0;
+   8          sbit gas = P2^1;
+   9          /*void External_interrupt() interrupt 0{
+  10                  Transmit('1');  
+  11          } */
+  12          
+  13          void main(){
+  14   1              unsigned char a;
+  15   1              serial_init();
+  16   1              IE = 0x81;
+  17   1              P0=0x00;
+  18   1              P2=0xff;
+  19   1              while(1)
+  20   1              {                                                                                                                                         
+  21   2                      a=Receive();
+  22   2                      if(a=='0'&&P2==0xff)
+  23   2                      {       
+  24   3                              forward=1;
+  25   3                              delay(65);
+  26   3                              forward=0;      
+  27   3                      }
+  28   2                      else if(a=='1'&&P2==0xff)
+  29   2                      {       
+  30   3                              backward=1;
+  31   3                              delay(65);
+  32   3                              backward=0;                                     
+  33   3                      }
+  34   2                      else if(a=='2')
+  35   2                      {       
+  36   3                              left=1;
+  37   3                              delay(5);
+  38   3                              left=0;                                 
+  39   3                      }
+  40   2                      else if(a=='3')
+  41   2                      {       
+  42   3                              right=1;
+  43   3                              delay(5);
+  44   3                              right=0;                                        
+  45   3                      }
+  46   2                              
+  47   2                      else
+  48   2                      {
+  49   3                       P0=0x00;
+  50   3                      }
+  51   2      
+  52   2                      if(temp==0)
+  53   2                      {
+  54   3                              Transmit('1');
+  55   3                      }
+C51 COMPILER V8.06   MAIN                                                                  02/21/2011 19:32:53 PAGE 2   
+
+  56   2                      if(gas==0)
+  57   2                      {
+  58   3                              Transmit('2');
+  59   3                      }
+  60   2      
+  61   2                              
+  62   2              }       
+  63   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    191    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
